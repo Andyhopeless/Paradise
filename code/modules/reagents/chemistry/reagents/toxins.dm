@@ -560,14 +560,13 @@
 	reagent_state = LIQUID
 	color = "#E7C4C4"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	penetrates_skin = TRUE
 	overdose_threshold = 40
 	taste_mult = 0
 
 /datum/reagent/histamine/reaction_mob(mob/living/M, method=REAGENT_TOUCH, volume) //dumping histamine on someone is VERY mean.
 	if(iscarbon(M))
 		if(method == REAGENT_TOUCH)
-			M.reagents.add_reagent("histamine",10)
-		else
 			to_chat(M, "<span class='danger'>You feel a burning sensation in your throat...</span>")
 			M.emote("drool")
 
